@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class JailBase {
   ///Get the arrests from a jail with id
-  Future<List<Arrest>> getArrests(String id) async {
+  static Future<List<Arrest>> getArrests(String id) async {
     final String url = 'http://www.JailBase.com/api/1/recent/?source_id=$id';
     var response = await http.get(url);
 
@@ -24,7 +24,7 @@ class JailBase {
   }
 
   ///Get a list of jails you can get arrests from
-  Future<List<Jail>> getJails() async {
+  static Future<List<Jail>> getJails() async {
     final String url = 'http://www.JailBase.com/api/1/sources/';
     var response = await http.get(url);
 

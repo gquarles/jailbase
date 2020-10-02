@@ -56,4 +56,8 @@ void main() {
     expect(test.charges.length, 1);
     expect(test.charges[0], '(001) Count of ASSAULT-INTENT/RECKLESS/INJURE');
   });
+
+  test('http', () async {
+    List<Arrest> arrests = await JailBase.getArrests('az-mcso');
+  });
 }
