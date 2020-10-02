@@ -22,7 +22,7 @@ void main() async {
     List<Arrest> arrests =  await JailBase.getArrests('az-mcso');
 	
 	for (Arrest arrest in arrests) {
-		print(arrest.name)
+		print(arrest.name);
 	}
 }
 ```
@@ -38,8 +38,8 @@ void main() async {
     List<Jail> jails =  await JailBase.getJails();
 	
 	for (Jail jail in jails) {
-		print(jail.name)
-		print(jail.id)
+		print(jail.name);
+		print(jail.id);
 	}
 }
 ```
