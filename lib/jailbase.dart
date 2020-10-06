@@ -51,6 +51,7 @@ class Arrest {
   final int id;
   final String url;
 
+  ///Arrest constructor
   Arrest(
       {this.dateFormatted,
       this.name,
@@ -60,6 +61,9 @@ class Arrest {
       this.id,
       this.url});
 
+  get mugshotUrlLarge => this.mugshotUrl.replaceAll(new RegExp(r'/small'), '');
+
+  ///Convert an arrest to json
   Arrest.fromJson(Map<String, dynamic> json)
       : dateFormatted = json['book_date_formatted'],
         name = json['name'],
@@ -69,6 +73,7 @@ class Arrest {
         id = json['id'],
         url = json['more_info_url'];
 
+  ///Convert json to an arrest
   Map<String, dynamic> toJson() => {
         'book_date_formatted': dateFormatted,
         'name': name,
@@ -94,6 +99,7 @@ class Jail {
   final String email;
   final bool hasMugshots;
 
+  ///Jail constructor
   Jail(
       {this.city,
       this.name,
@@ -108,6 +114,7 @@ class Jail {
       this.email,
       this.hasMugshots});
 
+  ///Convert a jail to json
   Jail.fromJson(Map<String, dynamic> json)
       : city = json['city'],
         name = json['name'],
@@ -122,6 +129,7 @@ class Jail {
         hasMugshots = json['has_mugshots'],
         id = json['source_id'];
 
+  ///Convert json to a jail instance
   Map<String, dynamic> toJson() => {
         'city': city,
         'name': name,

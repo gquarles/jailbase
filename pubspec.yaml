@@ -1,6 +1,6 @@
 name: jailbase
 description: A wrapper for the jailbase API
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/gquarles/jailbase
 
 environment:

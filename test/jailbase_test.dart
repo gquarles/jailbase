@@ -56,4 +56,21 @@ void main() {
     expect(test.charges.length, 1);
     expect(test.charges[0], '(001) Count of ASSAULT-INTENT/RECKLESS/INJURE');
   });
+
+  test('arrest get large url', () async {
+    Arrest test = Arrest.fromJson({
+      "book_date_formatted": "Oct 02, 2020",
+      "name": "Peter Paul Konieczny",
+      "mugshot":
+          "https://imgstore.jailbase.com/small/arrested/az-mcso/2020-10-02/peter-paul-konieczny-t657352.pic1.jpg",
+      "book_date": "2020-10-02",
+      "charges": ["(001) Count of ASSAULT-INTENT/RECKLESS/INJURE"],
+      "id": 32177547,
+      "more_info_url":
+          "http://www.jailbase.com/en/az-mcsopeter-paul-konieczny-32177547"
+    });
+
+    expect(test.mugshotUrlLarge,
+        'https://imgstore.jailbase.com/arrested/az-mcso/2020-10-02/peter-paul-konieczny-t657352.pic1.jpg');
+  });
 }
